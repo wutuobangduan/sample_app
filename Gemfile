@@ -4,6 +4,8 @@ gem 'rails', '4.0.2'
 
 gem 'bootstrap-sass', '2.3.2.0'
 
+# gem 'bcrypt-ruby', '3.0.1'
+
 group :development, :test do
   gem 'mysql2'
   gem 'rspec-rails', '2.13.1'
@@ -29,7 +31,7 @@ group :production do
   gem 'pg', '0.15.1'
 end
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
