@@ -9,6 +9,7 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:remember_token)}
 
   it { should be_valid }
 
@@ -26,6 +27,9 @@ describe User do
     before { @user.name = "a"*31 }
     it { should_not be_valid }
   end
+
+
+
 
   describe "when email format is invalid" do
     it "should be invalid" do
@@ -98,6 +102,11 @@ describe User do
       @user.save
       expect(@user.reload.email).to eq mixed_case_email.downcase
     end
+  end
+
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
   end
   # pending "add some examples to (or delete) #{__FILE__}"
 end
